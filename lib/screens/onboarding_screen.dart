@@ -201,8 +201,38 @@ class OnBoardingScreen extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 12.h,
+              height: 20.h,
             ),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: _padding),
+              child: SlideAnimation(
+                  begin: const Offset(0, 20),
+                  intervalStart: 0.6,
+                  child: FadeAnimation(
+                    intervalStart: 0.6,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'Supported By',
+                          style: bodyTextStyle,
+                        ),
+                        SvgPicture.asset(
+                          'assets/images/binance.svg',
+                          width: 24.r,
+                        ),
+                        SvgPicture.asset(
+                          'assets/images/huobi.svg',
+                          width: 22.r,
+                        ),
+                        SvgPicture.asset(
+                          'assets/images/xrp.svg',
+                          width: 22.r,
+                        ),
+                      ],
+                    ),
+                  )),
+            )
           ],
         ),
       ),
