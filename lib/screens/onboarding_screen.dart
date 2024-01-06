@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:nftui/animations/animations.dart';
 import 'package:nftui/animations/fade_animation.dart';
 import 'package:nftui/animations/slide_animation.dart';
 import 'package:nftui/constants.dart';
+import 'package:nftui/screens/home_screen.dart';
 
 class OnBoardingScreen extends StatelessWidget {
   const OnBoardingScreen({super.key});
@@ -164,13 +166,22 @@ class OnBoardingScreen extends StatelessWidget {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Container(
-                                width: 40.r,
-                                height: 40.r,
-                                decoration: const BoxDecoration(
-                                  color: Color(0xffcab2ff),
+                              GestureDetector(
+                                onTap: () {
+                                  Navigator.push(
+                                      context,
+                                      PageTransition(
+                                          child: HomeScreen(),
+                                          type: PageTransitionType.fadeIn));
+                                },
+                                child: Container(
+                                  width: 40.r,
+                                  height: 40.r,
+                                  decoration: const BoxDecoration(
+                                    color: Color(0xffcab2ff),
+                                  ),
+                                  child: const Icon(Iconsax.arrow_right_1),
                                 ),
-                                child: const Icon(Iconsax.arrow_right_1),
                               ),
                               SizedBox(
                                 height: 24.h,
@@ -325,6 +336,9 @@ class EventState extends StatelessWidget {
           title,
           style: TextStyle(fontSize: 16.r, fontWeight: FontWeight.bold),
         ),
+        // SizedBox(
+        //   height: 8.h,
+        // ),
         Text(
           subtitle,
           style: TextStyle(fontSize: 14.r, color: Colors.black54),
