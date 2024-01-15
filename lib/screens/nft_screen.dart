@@ -89,20 +89,66 @@ class NFTScreen extends StatelessWidget {
                               )),
                           title: const Text('Highest Bid Placed By'),
                           subtitle: Text(
-                            'Merry Rose',
+                            'Zoey Rose',
                             style: TextStyle(
                               fontSize: 16.r,
                               color: Colors.black,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                        )
+                          trailing: Text(
+                            '15.97 ETH',
+                            style: TextStyle(
+                              fontSize: 16.r,
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          height: 16.h,
+                        ),
+                        const Button()
                       ],
                     )),
               ),
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+class Button extends StatelessWidget {
+  const Button({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 12.h),
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(4), color: Colors.black),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(
+            'Place Bid',
+            style: TextStyle(
+              fontSize: 16.r,
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          Text(
+            '20h: 35m: 40s',
+            style: TextStyle(
+              fontSize: 16.r,
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
+            ),
+          )
+        ],
       ),
     );
   }
