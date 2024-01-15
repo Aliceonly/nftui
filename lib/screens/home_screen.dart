@@ -56,7 +56,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         Navigator.push(
                             context,
                             PageTransition(
-                                child: NFTScreen(),
+                                child: const NFTScreen(),
                                 type: PageTransitionType.fadeIn));
                       },
                       child: Container(
